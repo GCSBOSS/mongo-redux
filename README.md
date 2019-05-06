@@ -10,19 +10,19 @@ simple functions on the async/await pattern for short and readable commands.
 
 ```js
 // Import the module
-const DataBase = require('mongo-redux');
+const Mongo = require('mongo-redux');
 
 // Instance a new client
-let db = new DataBase();
+let mongo = new Mongo();
 
 // Start a connection
-await db.connect('mongodb://127.0.0.1:27017');
+await mongo.connect('mongodb://127.0.0.1:27017');
 
 // Use functionallity
-await db.insert('Test', { data: 'My Test Document' });
+await mongo.insert('Test', { data: 'My Test Document' });
 
 // Close the connection
-await db.close();
+await mongo.close();
 ```
 
 ## Reporting Bugs
