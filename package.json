@@ -1,6 +1,6 @@
 {
     "name": "mongo-redux",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A thin wrapper around main mongo functionality with simple return values and async/await support.",
     "main": "lib/main.js",
     "scripts": {
