@@ -1,0 +1,31 @@
+{
+    "name": "mongo-redux",
+    "version": "0.0.0",
+    "description": "A thin wrapper around main mongo functionality with simple return values and async/await support.",
+    "main": "lib/main.js",
+    "scripts": {
+        "test": "mocha -b --no-diff test/spec.js",
+        "coverage": "nyc -r html mocha -b --no-diff test/spec.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/GCSBOSS/mongo-redux.git"
+    },
+    "keywords": [
+        "mongo",
+        "mongodb",
+        "wrapper",
+        "async",
+        "await",
+        "simple"
+    ],
+    "author": "Guilherme C. Souza",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://gitlab.com/GCSBOSS/mongo-redux/issues"
+    },
+    "homepage": "https://gitlab.com/GCSBOSS/mongo-redux#README",
+    "dependencies": {
+        "mongodb": "^3.2.3"
+    }
+}
