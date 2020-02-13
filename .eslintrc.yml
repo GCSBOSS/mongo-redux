@@ -3,7 +3,7 @@
     node: true
     es6: true
   parserOptions:
-    ecmaVersion: 8
+    ecmaVersion: 2018
   rules:
     no-dupe-args: error
     no-dupe-keys: error

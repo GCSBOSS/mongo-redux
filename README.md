@@ -47,6 +47,9 @@ await mongo.push('Test', '_id', db.id(myId), { products: 'Cool Product 17' });
 // pull ( collection, key, value, arrayAndTargetValue ) => Boolean
 await mongo.pull('Test', '_id', db.id(myId), { products: 'Awful Product 16' });
 
+// Create indexes
+await mongo.index('Test', { email: 1 }, { unique: true });
+
 // Access mongodb Database object
 let info = await mongo.db.collectionsInfo();
 
