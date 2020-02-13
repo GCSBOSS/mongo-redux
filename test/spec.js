@@ -4,8 +4,8 @@ var assert = require('assert');
 describe('Mongo', () => {
     const Mongo = require('../lib/main');
     let mongo;
-    let DB_URL = process.env.DB_URL || 'mongomongo://localhost:27017';
-    let DB_AUTH_URL = process.env.DB_AUTH_URL || 'mongomongo://localhost:27018';
+    let DB_URL = process.env.DB_URL || 'mongodb://localhost:27017';
+    let DB_AUTH_URL = process.env.DB_AUTH_URL || 'mongodb://localhost:27018';
     const SETTINGS = { url: DB_URL, name: 'nodeTest' };
 
     describe('#id(value)', function(){
