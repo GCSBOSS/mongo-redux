@@ -4,8 +4,8 @@ var assert = require('assert');
 describe('Mongo', () => {
     const Mongo = require('../lib/main');
     let mongo;
-    let DB_URL = process.env.DB_URL || 'mongomongo://localhost:27017';
-    let DB_AUTH_URL = process.env.DB_AUTH_URL || 'mongomongo://localhost:27018';
+    let DB_URL = process.env.DB_URL || 'mongodb://localhost:27017';
+    let DB_AUTH_URL = process.env.DB_AUTH_URL || 'mongodb://localhost:27018';
     const SETTINGS = { url: DB_URL, name: 'nodeTest' };
 
     describe('#id(value)', function(){
@@ -355,6 +355,26 @@ describe('Mongo', () => {
         it('should close a connection just fine', async function(){
             await mongo.connect(SETTINGS);
             mongo.close();
+        });
+
+    });
+
+    describe('#index(collection, spec)', function(){
+
+        beforeEach(async function(){
+            mongo = new Mongo();
+            await mongo.connect(SETTINGS);
+            await mongo.db.dropDatabase('nodeTest');
+        });
+
+        afterEach(function(){
+            mongo.close();
+        });
+
+        it('should create index just fine', async function(){
+            await mongo.index('test', { a: 1 }, { unique: true });
+            await mongo.insert('test', { a: 'foo' });
+            await assert.rejects(mongo.insert('test', { a: 'foo' }));
         });
 
     });
