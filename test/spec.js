@@ -359,4 +359,24 @@ describe('Mongo', () => {
 
     });
 
+    describe('#index(collection, spec)', function(){
+
+        beforeEach(async function(){
+            mongo = new Mongo();
+            await mongo.connect(SETTINGS);
+            await mongo.db.dropDatabase('nodeTest');
+        });
+
+        afterEach(function(){
+            mongo.close();
+        });
+
+        it('should create index just fine', async function(){
+            await mongo.index('test', { a: 1 }, { unique: true });
+            await mongo.insert('test', { a: 'foo' });
+            await assert.rejects(mongo.insert('test', { a: 'foo' }));
+        });
+
+    });
+
 });
