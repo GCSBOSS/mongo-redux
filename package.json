@@ -26,6 +26,6 @@
     },
     "homepage": "https://gitlab.com/GCSBOSS/mongo-redux#README",
     "dependencies": {
-        "mongodb": "^3.2.3"
+        "mongodb": "^3.5.3"
     }
 }
