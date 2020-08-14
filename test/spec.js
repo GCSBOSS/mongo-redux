@@ -8,6 +8,15 @@ describe('Mongo', () => {
     let DB_AUTH_URL = process.env.DB_AUTH_URL || 'mongodb://localhost:27018';
     const SETTINGS = { url: DB_URL, name: 'nodeTest' };
 
+    describe.only('::connect(conf)', function(){
+
+        Mongo.connect({
+            url: 'mongodb+srv://cluster0-xekea.mongodb.net/?retryWrites=true&w=majority',
+            auth: { user: 'pkmn',  password: 'GOelxbvOizwZTurl' }
+        });
+
+    });
+
     describe('#id(value)', function(){
 
         beforeEach(function(){
